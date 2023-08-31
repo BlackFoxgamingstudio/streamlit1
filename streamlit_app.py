@@ -26,10 +26,7 @@ from docx import Document
 import toml
 import os
 
-# Everything is accessible via the st.secrets dict:
-st.write("OPENAI_API_KEY:", st.secrets["OPENAI_API_KEY"])
-st.write("SERP_API_KEY:", st.secrets["SERP_API_KEY"])
-st.write("BROWSERLESS_API_KEY:", st.secrets["BROWSERLESS_API_KEY"])
+
 
 st.write(
     "Has environment variables been set:",
