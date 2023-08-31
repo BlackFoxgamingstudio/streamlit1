@@ -24,13 +24,16 @@ import streamlit as st
 import base64
 from docx import Document
 import toml
+import os
 
-# Load configuration values from TOML file
-config = toml.load("config.toml")
+# Everything is accessible via the st.secrets dict:
 
-openai_api_key = config["api_keys"]["OPENAI_API_KEY"]
-serp_api_key = config["api_keys"]["SERP_API_KEY"]
-browserless_api_key = config["api_keys"]["BROWSERLESS_API_KEY"]
+st.write("api_keys:", st.secrets["api_keys"]["things_i_like"])
+
+st.write(
+    "Has environment variables been set:",
+    os.environ["api_keys"] == st.secrets["api_keys"],
+)
 
 # Now you can use these variables throughout your script
 
