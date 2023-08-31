@@ -5,3 +5,4 @@ pydantic==1.*
 bs4
 langchain
 tiktoken
+docx
