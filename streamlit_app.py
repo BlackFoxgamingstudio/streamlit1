@@ -27,12 +27,15 @@ import toml
 import os
 
 # Everything is accessible via the st.secrets dict:
-
-st.write("api_keys:", st.secrets["api_keys"]["things_i_like"])
+st.write("OPENAI_API_KEY:", st.secrets["OPENAI_API_KEY"])
+st.write("SERP_API_KEY:", st.secrets["SERP_API_KEY"])
+st.write("BROWSERLESS_API_KEY:", st.secrets["BROWSERLESS_API_KEY"])
 
 st.write(
     "Has environment variables been set:",
-    os.environ["api_keys"] == st.secrets["api_keys"],
+    os.environ["OPENAI_API_KEY"] == st.secrets["OPENAI_API_KEY"],
+     os.environ["SERP_API_KEY"] == st.secrets["SERP_API_KEY"],
+     os.environ["BROWSERLESS_API_KEY"] == st.secrets["BROWSERLESS_API_KEY"],
 )
 
 # Now you can use these variables throughout your script
