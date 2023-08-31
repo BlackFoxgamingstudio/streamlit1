@@ -23,7 +23,16 @@ from io import StringIO, BytesIO
 import streamlit as st
 import base64
 from docx import Document
+import toml
 
+# Load configuration values from TOML file
+config = toml.load("config.toml")
+
+openai_api_key = config["api_keys"]["OPENAI_API_KEY"]
+serp_api_key = config["api_keys"]["SERP_API_KEY"]
+browserless_api_key = config["api_keys"]["BROWSERLESS_API_KEY"]
+
+# Now you can use these variables throughout your script
 
 def chunk_text(text, chunk_size=5000):
     """Break text into chunks of a specific size."""
