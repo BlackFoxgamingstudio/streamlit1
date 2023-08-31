@@ -237,7 +237,7 @@ def main():
 
 
  # Ensure both a document is uploaded and a query is entered
- combined_text = docx_text + " " + query
+ combined_text = str(docx_text) + " " + query
  st.write("Doing research for ", combined_text)
  result_text = process_in_chunks(combined_text, agent)
  st.session_state.accumulated_results += result_text
